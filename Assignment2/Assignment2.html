@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderLust Travels</title>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box}
+    body {font-family:Arial,sans-serif;line-height:1.6;color:#333;background:#f5f5f5}
+    h2 {text-align:center;margin:1.5rem 0;color:#333;font-size:2rem}
+
+    header,footer,.btn,.book-btn,.social-links a,th,button {
+      background:#333;color:#fff
+    }
+    header,footer {text-align:center;padding:1rem}
+    nav ul {list-style:none;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+    nav a {color:#fff;text-decoration:none;font-weight:bold;padding:.5rem 1rem;border-radius:5px}
+    nav a:hover,.btn:hover,.book-btn:hover,.social-links a:hover,button:hover {background:#555}
+
+    section {padding:2rem 5%}
+    .banner {
+      background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+        url('https://images.unsplash.com/photo-1501785888041-af3ef285b736?q=80&w=2070&auto=format&fit=crop') center/cover;
+      height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      color:#fff;text-align:center;border-radius:10px
+    }
+    .btn {padding:1rem 2rem;border-radius:5px;font-weight:bold;text-decoration:none;margin-top:1rem;display:inline-block}
+
+    table {width:100%;border-collapse:collapse;margin-top:1rem}
+    th,td {padding:1rem;text-align:left;border-bottom:1px solid #ddd}
+    tr:nth-child(even){background:#f9f9f9}
+    .book-btn {padding:.5rem 1rem;border-radius:3px;font-size:.9rem;text-decoration:none}
+
+    label {display:block;margin:.5rem 0;font-weight:bold}
+    input,select {width:100%;padding:.75rem;border:1px solid #ddd;border-radius:5px}
+    button {width:100%;padding:1rem;border:none;border-radius:5px;font-size:1rem;font-weight:bold;cursor:pointer;margin-top:1rem}
+
+    .image-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem}
+    .image-item {overflow:hidden;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+    .image-item img {width:100%;height:200px;object-fit:cover}
+    figcaption {background:#f9f9f9;padding:1rem;text-align:center}
+
+    .social-links a {display:inline-block;margin:.5rem;padding:.5rem 1rem;border-radius:5px;text-decoration:none}
+
+    @media(max-width:768px){
+      nav ul{flex-direction:column}
+      .banner h1{font-size:2rem}
+      section{padding:1rem 3%}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WanderLust Travels</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home -->
+    <section id="home">
+      <div class="banner">
+        <h1>🌍 Your Dream Adventure Awaits!</h1>
+        <p>Discover amazing destinations with WanderLust Travels</p>
+        <a href="#packages" class="btn">View Packages</a>
+      </div>
+      <h2>Welcome</h2>
+      <p style="text-align:center;max-width:700px;margin:0 auto">
+        We create unforgettable travel experiences just for you! From romantic getaways to thrilling adventures, we make your dream trips come true.
+      </p>
+      <h2>Smart Travel Tips</h2>
+      <ul style="list-style:none;text-align:center;max-width:500px;margin:1rem auto">
+        <li>🎒 Pack Light & Smart</li>
+        <li>🗣️ Learn Basic Phrases</li>
+        <li>📋 Keep Document Copies</li>
+        <li>🏦 Inform Your Bank</li>
+        <li>🌍 Respect Local Culture</li>
+      </ul>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages">
+      <h2>Our Packages</h2>
+      <table>
+        <tr><th>Destination</th><th>Package</th><th>Duration</th><th>Price</th><th></th></tr>
+        <tr><td>Paris, France</td><td>Romantic Parisian Escape</td><td>5D/4N</td><td>$1500</td><td><a href="#booking" class="book-btn">Book</a></td></tr>
+        <tr><td>Kyoto, Japan</td><td>Japanese Cultural Immersion</td><td>7D/6N</td><td>$2200</td><td><a href="#booking" class="book-btn">Book</a></td></tr>
+        <tr><td>Swiss Alps</td><td>Mountain Adventure</td><td>6D/5N</td><td>$1800</td><td><a href="#booking" class="book-btn">Book</a></td></tr>
+        <tr><td>Bali, Indonesia</td><td>Tropical Retreat</td><td>8D/7N</td><td>$1600</td><td><a href="#booking" class="book-btn">Book</a></td></tr>
+      </table>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking">
+      <h2>Book Now</h2>
+      <form>
+        <label>Full Name:<input type="text" required></label>
+        <label>Destination:<input type="text" required></label>
+        <label>Package:
+          <select required>
+            <option>-- Select --</option>
+            <option>Paris</option><option>Kyoto</option><option>Alps</option><option>Bali</option>
+          </select>
+        </label>
+        <label>Start Date:<input type="date" required></label>
+        <label>End Date:<input type="date" required></label>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="image-grid">
+        <figure class="image-item">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1974&auto=format&fit=crop" alt="Eiffel Tower, Paris">
+          <figcaption>Paris – Eiffel Tower</figcaption>
+        </figure>
+        <figure class="image-item">
+          <img src="download-2.jpg" alt="Fushimi Inari, Kyoto">
+          <figcaption>Kyoto – Fushimi Inari Shrine</figcaption>
+        </figure>
+        <figure class="image-item">
+          <img src="download-1.jpg" alt="Swiss Alps">
+          <figcaption>Switzerland – The Alps</figcaption>
+        </figure>
+        <figure class="image-item">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1974&auto=format&fit=crop" alt="Bali Beach">
+          <figcaption>Bali – Tropical Beaches</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p style="text-align:center">Email: <a href="mailto:info@wanderlust.com">info@wanderlust.com</a></p>
+      <div class="social-links" style="text-align:center">
+        <a href="#">Facebook</a><a href="#">Twitter</a><a href="#">Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>&copy; 2025 Wanderlust Travels</p></footer>
+</body>
+</html>
