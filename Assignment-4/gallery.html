@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - College Fest 2025</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="main-header">
+    <h1 class="highlight">College Fest 2025</h1>
+    <p>Date: 15th - 17th September 2025</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="register.html">Register</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-content">
+      <h2>📸 Photo Gallery</h2>
+      <p>Memories from our amazing college fest!</p>
+
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="performances">Performances</button>
+        <button class="filter-btn" data-filter="competitions">Competitions</button>
+      </div>
+
+      <div class="photo-gallery">
+        <div class="gallery-item" data-category="events">
+          <img src="images/pic1.jpeg" alt="Coding Hackathon" onerror="this.src='https://via.placeholder.com/300x200/4CAF50/white?text=Coding+Event'">
+          <div class="gallery-overlay">
+            <h3>Coding Hackathon</h3>
+            <p>Teams working on innovative solutions</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="performances">
+          <img src="images/pic2.jpg" alt="Dance Performance" onerror="this.src='https://via.placeholder.com/300x200/FF6B6B/white?text=Dance+Performance'">
+          <div class="gallery-overlay">
+            <h3>Dance Battle</h3>
+            <p>Amazing dance performances</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="competitions">
+          <img src="images/pic3.webp" alt="Quiz Competition" onerror="this.src='https://via.placeholder.com/300x200/4ECDC4/white?text=Quiz+Competition'">
+          <div class="gallery-overlay">
+            <h3>Quiz Mania</h3>
+            <p>Brain battles and knowledge tests</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <img src="images/pic4.avif" alt="Tech Exhibition" onerror="this.src='https://via.placeholder.com/300x200/45B7D1/white?text=Tech+Exhibition'">
+          <div class="gallery-overlay">
+            <h3>Tech Exhibition</h3>
+            <p>Innovative student projects</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="performances">
+          <img src="images/pic5.jpeg" alt="Music Concert" onerror="this.src='https://via.placeholder.com/300x200/9B59B6/white?text=Music+Concert'">
+          <div class="gallery-overlay">
+            <h3>Music Concert</h3>
+            <p>Live music performances</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="competitions">
+          <img src="images/pic6.jpg" alt="Photography Contest" onerror="this.src='https://via.placeholder.com/300x200/F39C12/white?text=Photography+Contest'">
+          <div class="gallery-overlay">
+            <h3>Photography Contest</h3>
+            <p>Capturing beautiful moments</p>
+          </div>
+        </div>
+
+        <!-- Additional placeholder images for a fuller gallery -->
+        <div class="gallery-item" data-category="events">
+          <img src="https://via.placeholder.com/300x200/E67E22/white?text=Opening+Ceremony" alt="Opening Ceremony">
+          <div class="gallery-overlay">
+            <h3>Opening Ceremony</h3>
+            <p>Grand inauguration of the fest</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="performances">
+          <img src="https://via.placeholder.com/300x200/E74C3C/white?text=Drama+Performance" alt="Drama Performance">
+          <div class="gallery-overlay">
+            <h3>Drama Performance</h3>
+            <p>Theatrical excellence on stage</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="competitions">
+          <img src="https://via.placeholder.com/300x200/27AE60/white?text=Debate+Competition" alt="Debate Competition">
+          <div class="gallery-overlay">
+            <h3>Debate Competition</h3>
+            <p>Battle of words and ideas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-stats">
+        <h3>📊 Gallery Statistics</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Photos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">15</span>
+            <span class="stat-label">Events Covered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Days of Fun</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 College Fest. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Gallery filtering functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Simple lightbox effect on image click
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', function() {
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.innerHTML = `
+          <div class="lightbox-content">
+            <img src="${this.src}" alt="${this.alt}">
+            <div class="lightbox-close">&times;</div>
+            <div class="lightbox-caption">${this.alt}</div>
+          </div>
+        `;
+        
+        document.body.appendChild(overlay);
+        
+        // Close lightbox when clicking close button or overlay
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+            document.body.removeChild(overlay);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

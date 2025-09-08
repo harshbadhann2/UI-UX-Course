@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5 - JavaScript Solutions</title>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6;}
+        .section {border: 1px solid #ddd; margin: 20px 0; padding: 20px; border-radius: 8px;}
+        .section h2 {color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;}
+        button {background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 5px;}
+        button:hover {background-color: #0056b3;}
+        input, select {padding: 8px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;}
+        .result {background-color: #f8f9fa; padding: 10px; margin: 10px 0; border-radius: 4px; border-left: 4px solid #007bff;}
+        .error {color: #dc3545; font-weight: bold;}
+        .success {color: #28a745; font-weight: bold;}
+        form {background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 10px 0;}
+        .form-group {margin-bottom: 15px;}
+        label {display: block; margin-bottom: 5px; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <h1>Assignment 5 - JavaScript Solutions</h1>
+    
+    <div class="section">
+        <h2>Part i: Basic Calculator</h2>
+        <input type="number" id="num1" placeholder="First number">
+        <input type="number" id="num2" placeholder="Second number">
+        <button onclick="calc()">Calculate</button>
+        <div id="calcResult" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="section">
+        <h2>Part ii: Array Operations</h2>
+        <p>Array: [12, 45, 8, 67, 23]</p>
+        <button onclick="arrayOps()">Run Operations</button>
+        <div id="arrayResult" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="section">
+        <h2>Part iii: Form Validation</h2>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="userName">Name:</label>
+                <input type="text" id="userName" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="userAge">Age:</label>
+                <input type="number" id="userAge" name="age" placeholder="Enter your age">
+            </div>
+            <button type="button" onclick="validate()">Validate</button>
+        </form>
+        <div id="validResult" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="section">
+        <h2>Part iv: Student Object Operations</h2>
+        <button onclick="studentOps()">Run Operations</button>
+        <div id="studentResult" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="section">
+        <h2>Part v: Array Methods</h2>
+        <p>Array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
+        <button onclick="arrayMethods()">Run Methods</button>
+        <div id="methodResult" class="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        function calc() {
+            const a = parseFloat(document.getElementById('num1').value);
+            const b = parseFloat(document.getElementById('num2').value);
+            
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById('calcResult').innerHTML = '<span class="error">Enter valid numbers!</span>';
+                document.getElementById('calcResult').style.display = 'block';
+                return;
+            }
+            
+            document.getElementById('calcResult').innerHTML = `
+                <p><strong>Sum:</strong> ${a} + ${b} = ${a + b}</p>
+                <p><strong>Difference:</strong> ${a} - ${b} = ${a - b}</p>
+                <p><strong>Product:</strong> ${a} × ${b} = ${a * b}</p>
+                <p><strong>Division:</strong> ${a} ÷ ${b} = ${b !== 0 ? a / b : 'Cannot divide by zero'}</p>
+            `;
+            document.getElementById('calcResult').style.display = 'block';
+        }
+
+        function arrayOps() {
+            const arr = [12, 45, 8, 67, 23];
+            const max = Math.max(...arr);
+            const min = Math.min(...arr);
+            const asc = [...arr].sort((a, b) => a - b);
+            const desc = [...arr].sort((a, b) => b - a);
+            
+            document.getElementById('arrayResult').innerHTML = `
+                <p><strong>Original:</strong> [${arr.join(', ')}]</p>
+                <p><strong>Max:</strong> ${max}</p>
+                <p><strong>Min:</strong> ${min}</p>
+                <p><strong>Ascending:</strong> [${asc.join(', ')}]</p>
+                <p><strong>Descending:</strong> [${desc.join(', ')}]</p>
+            `;
+            document.getElementById('arrayResult').style.display = 'block';
+        }
+
+        function validate() {
+            const name = document.getElementById('userName').value.trim();
+            const email = document.getElementById('userEmail').value.trim();
+            const age = parseInt(document.getElementById('userAge').value);
+            
+            let valid = true;
+            let msgs = [];
+            
+            if (name === '') {
+                valid = false;
+                msgs.push('<span class="error">❌ Name required</span>');
+            } else {
+                msgs.push('<span class="success">✅ Name valid</span>');
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                valid = false;
+                msgs.push('<span class="error">❌ Invalid email</span>');
+            } else {
+                msgs.push('<span class="success">✅ Email valid</span>');
+            }
+            
+            if (isNaN(age) || age < 18 || age > 100) {
+                valid = false;
+                msgs.push('<span class="error">❌ Age must be 18-100</span>');
+            } else {
+                msgs.push('<span class="success">✅ Age valid</span>');
+            }
+            
+            document.getElementById('validResult').innerHTML = `
+                ${msgs.join('<br>')}
+                <br><br><strong>${valid ? '<span class="success">Form Valid ✅</span>' : '<span class="error">Form Invalid ❌</span>'}</strong>
+            `;
+            document.getElementById('validResult').style.display = 'block';
+        }
+
+        function studentOps() {
+            let student = {name: "John Smith", age: 20, grades: [85, 92, 78, 96, 88]};
+            let ops = [];
+            
+            ops.push(`<strong>Original:</strong><br>${JSON.stringify(student, null, 2)}`);
+            
+            student.class = "Computer Science";
+            ops.push(`<strong>Added class:</strong><br>${JSON.stringify(student, null, 2)}`);
+            
+            student.grades.push(94);
+            const avg = student.grades.reduce((sum, grade) => sum + grade, 0) / student.grades.length;
+            
+            ops.push(`<strong>Final:</strong><br>Name: ${student.name}<br>Age: ${student.age}<br>Class: ${student.class}<br>Grades: [${student.grades.join(', ')}]<br>Average: ${avg.toFixed(2)}`);
+            
+            document.getElementById('studentResult').innerHTML = ops.join('<br><br>');
+            document.getElementById('studentResult').style.display = 'block';
+        }
+
+        function arrayMethods() {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const evens = arr.filter(n => n % 2 === 0);
+            const doubled = evens.map(n => n * 2);
+            const sum = doubled.reduce((total, n) => total + n, 0);
+            const chainResult = arr.filter(n => n % 2 === 0).map(n => n * 2).reduce((total, n) => total + n, 0);
+            
+            document.getElementById('methodResult').innerHTML = `
+                <p><strong>Original:</strong> [${arr.join(', ')}]</p>
+                <p><strong>Even numbers:</strong> [${evens.join(', ')}]</p>
+                <p><strong>Doubled:</strong> [${doubled.join(', ')}]</p>
+                <p><strong>Sum:</strong> ${sum}</p>
+                <p><strong>Chain result:</strong> ${chainResult}</p>
+            `;
+            document.getElementById('methodResult').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

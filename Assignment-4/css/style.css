@@ -1,0 +1,107 @@
+/* General styles (element selector) */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  line-height: 1.6;
+}
+
+/* ID selector */
+#main-header {
+  background: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Class selector */
+.highlight {
+  color: #ffcc00;
+}
+
+/* Attribute selector */
+a[href*="contact"] {
+  font-weight: bold;
+}
+
+/* Pseudo-class */
+nav a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+/* Pseudo-element */
+h1::after {
+  content: " 🎉";
+}
+
+/* Navigation (flexbox) */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+nav a:hover {
+  background: #002244;
+}
+
+/* Video section */
+.video-section {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Schedule table (box model) */
+.schedule-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.schedule-table th, .schedule-table td {
+  border: 1px solid #333;
+  padding: 12px;
+}
+.schedule-table th {
+  background: #003366;
+  color: white;
+}
+
+/* Gallery (CSS Grid responsive) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+.gallery img {
+  width: 100%;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  video {
+    width: 100%;
+  }
+  .schedule-table {
+    font-size: 14px;
+  }
+}

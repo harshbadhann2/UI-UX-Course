@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - College Fest 2025</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="main-header">
+    <h1 class="highlight">College Fest 2025</h1>
+    <p>Date: 15th - 17th September 2025</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="register.html" class="active">Register</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-content">
+      <h2>📝 Event Registration</h2>
+      <p>Register for your favorite events and join the fun!</p>
+
+      <div class="form-container">
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="college">College/Institution:</label>
+            <input type="text" id="college" name="college" required>
+          </div>
+
+          <div class="form-group">
+            <label for="event">Select Primary Event:</label>
+            <select id="event" name="event" required>
+              <option value="">Choose an event...</option>
+              <option value="coding">Coding Hackathon</option>
+              <option value="web-dev">Web Development</option>
+              <option value="dance">Dance Battle</option>
+              <option value="music">Music Concert</option>
+              <option value="quiz">Quiz Mania</option>
+              <option value="debate">Debate Competition</option>
+              <option value="photography">Photography Contest</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="additional">Additional Events (Optional):</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="extra" value="coding"> Coding Hackathon</label>
+              <label><input type="checkbox" name="extra" value="dance"> Dance Battle</label>
+              <label><input type="checkbox" name="extra" value="quiz"> Quiz Mania</label>
+              <label><input type="checkbox" name="extra" value="photography"> Photography Contest</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="experience">Experience Level:</label>
+            <div class="radio-group">
+              <label><input type="radio" name="level" value="beginner" required> Beginner</label>
+              <label><input type="radio" name="level" value="intermediate"> Intermediate</label>
+              <label><input type="radio" name="level" value="advanced"> Advanced</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="comments">Special Requirements/Comments:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Any dietary restrictions, team member details, etc."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">🎯 Register Now</button>
+            <button type="reset" class="reset-btn">🔄 Clear Form</button>
+          </div>
+        </form>
+
+        <div id="successMessage" style="display: none;" class="success-message">
+          <h3>🎉 Registration Successful!</h3>
+          <p>Thank you for registering! You'll receive a confirmation email shortly.</p>
+          <p><strong>Registration ID:</strong> <span id="regId"></span></p>
+        </div>
+      </div>
+
+      <div class="registration-info">
+        <h3>📋 Registration Guidelines</h3>
+        <ul>
+          <li>✅ Registration is completely free</li>
+          <li>✅ You can participate in multiple events</li>
+          <li>✅ Bring valid college ID on event day</li>
+          <li>✅ Team events welcome individual registrations</li>
+          <li>⏰ Registration closes on September 10, 2025</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 College Fest. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Generate registration ID
+      const regId = 'CF2025-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+      document.getElementById('regId').textContent = regId;
+      
+      // Show success message
+      document.getElementById('successMessage').style.display = 'block';
+      document.querySelector('.form-container form').style.display = 'none';
+      
+      // Scroll to success message
+      document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
