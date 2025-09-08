@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - College Fest 2025</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>🎉 College Fest 2025</h1>
+      <p class="tagline">A 3-day cultural and technical extravaganza!</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="register.html" class="active">Register</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h2>📝 Event Registration</h2>
+        <p>Register for your favorite events and be part of the excitement!</p>
+      </div>
+    </section>
+
+    <section class="registration">
+      <div class="container">
+        <div class="registration-form">
+          <form id="registrationForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="college">College/Institution *</label>
+                <input type="text" id="college" name="college" required>
+              </div>
+              <div class="form-group">
+                <label for="year">Academic Year *</label>
+                <select id="year" name="year" required>
+                  <option value="">Select Year</option>
+                  <option value="1st">1st Year</option>
+                  <option value="2nd">2nd Year</option>
+                  <option value="3rd">3rd Year</option>
+                  <option value="4th">4th Year</option>
+                  <option value="postgrad">Post Graduate</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="events">Select Events *</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="coding-hackathon">
+                  <span class="checkmark"></span>
+                  Coding Hackathon (₹50,000 Prize)
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="web-development">
+                  <span class="checkmark"></span>
+                  Web Development Contest (₹30,000 Prize)
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="ai-ml-workshop">
+                  <span class="checkmark"></span>
+                  AI/ML Workshop (Certificate)
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="dance-battle">
+                  <span class="checkmark"></span>
+                  Dance Battle (₹25,000 Prize)
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="music-concert">
+                  <span class="checkmark"></span>
+                  Music Concert (₹20,000 Prize)
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="drama-competition">
+                  <span class="checkmark"></span>
+                  Drama Competition (₹15,000 Prize)
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="quiz-mania">
+                  <span class="checkmark"></span>
+                  Quiz Mania (₹10,000 Prize)
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="debate-competition">
+                  <span class="checkmark"></span>
+                  Debate Competition (₹12,000 Prize)
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="photography-contest">
+                  <span class="checkmark"></span>
+                  Photography Contest (₹8,000 Prize)
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="teamSize">Team Size (if applicable)</label>
+              <select id="teamSize" name="teamSize">
+                <option value="">Individual</option>
+                <option value="2">2 Members</option>
+                <option value="3">3 Members</option>
+                <option value="4">4 Members</option>
+                <option value="5">5 Members</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="dietary">Dietary Preferences</label>
+              <select id="dietary" name="dietary">
+                <option value="none">No Preference</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten-free">Gluten Free</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="comments">Additional Comments</label>
+              <textarea id="comments" name="comments" rows="4" placeholder="Any special requirements or team member details..."></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="terms" name="terms" required>
+                <span class="checkmark"></span>
+                I agree to the <a href="#" onclick="showTerms()">terms and conditions</a> *
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="submit-btn">🎯 Register Now</button>
+              <button type="reset" class="reset-btn">🔄 Clear Form</button>
+            </div>
+          </form>
+
+          <div id="successMessage" class="success-message" style="display: none;">
+            <h3>🎉 Registration Successful!</h3>
+            <p>Thank you for registering! You will receive a confirmation email shortly.</p>
+            <p><strong>Registration ID:</strong> <span id="registrationId"></span></p>
+          </div>
+        </div>
+
+        <div class="registration-info">
+          <h3>📋 Registration Guidelines</h3>
+          <ul>
+            <li>Registration is free for all events</li>
+            <li>You can register for multiple events</li>
+            <li>Team events require all members to register</li>
+            <li>Bring a valid college ID on event day</li>
+            <li>Registration deadline: September 10, 2025</li>
+          </ul>
+
+          <h3>🏆 Prize Information</h3>
+          <ul>
+            <li>Total prize pool: ₹2,00,000+</li>
+            <li>Certificates for all participants</li>
+            <li>Trophies for winners</li>
+            <li>Internship opportunities for top performers</li>
+          </ul>
+
+          <h3>📞 Need Help?</h3>
+          <p>Contact our registration team:</p>
+          <ul>
+            <li>Email: register@collegefest2025.com</li>
+            <li>Phone: +91 9876543210</li>
+            <li>WhatsApp: +91 9876543210</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 College Fest. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const selectedEvents = [];
+      const eventCheckboxes = document.querySelectorAll('input[name="events"]:checked');
+      eventCheckboxes.forEach(checkbox => {
+        selectedEvents.push(checkbox.value);
+      });
+      
+      if (selectedEvents.length === 0) {
+        alert('Please select at least one event!');
+        return;
+      }
+      
+      // Generate registration ID
+      const registrationId = 'CF2025-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+      
+      // Show success message
+      document.getElementById('registrationId').textContent = registrationId;
+      document.getElementById('successMessage').style.display = 'block';
+      document.querySelector('.registration-form form').style.display = 'none';
+      
+      // Scroll to success message
+      document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    function showTerms() {
+      alert('Terms and Conditions:\n\n1. Registration is mandatory for participation\n2. Participants must follow event rules\n3. College reserves the right to disqualify participants\n4. Decisions of judges are final\n5. Photography/videography during events is allowed\n6. Participants attend at their own risk');
+    }
+  </script>
+</body>
+</html>

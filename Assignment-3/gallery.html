@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - College Fest 2025</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>🎉 College Fest 2025</h1>
+      <p class="tagline">A 3-day cultural and technical extravaganza!</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="register.html">Register</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h2>📸 Photo Gallery</h2>
+        <p>Memories from previous years and current preparations</p>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="gallery-tabs">
+          <button class="tab-btn active" onclick="showGallery('all')">All Photos</button>
+          <button class="tab-btn" onclick="showGallery('technical')">Technical Events</button>
+          <button class="tab-btn" onclick="showGallery('cultural')">Cultural Events</button>
+          <button class="tab-btn" onclick="showGallery('competitions')">Competitions</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryContainer">
+          <!-- Technical Events -->
+          <div class="gallery-item" data-category="technical">
+            <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=300&fit=crop" alt="Coding Hackathon">
+            <div class="gallery-overlay">
+              <h4>Coding Hackathon 2024</h4>
+              <p>24-hour coding challenge</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="technical">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop" alt="Web Development">
+            <div class="gallery-overlay">
+              <h4>Web Development Contest</h4>
+              <p>Creating amazing websites</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="technical">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop" alt="AI Workshop">
+            <div class="gallery-overlay">
+              <h4>AI/ML Workshop</h4>
+              <p>Learning cutting-edge technology</p>
+            </div>
+          </div>
+
+          <!-- Cultural Events -->
+          <div class="gallery-item" data-category="cultural">
+            <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=400&h=300&fit=crop" alt="Dance Battle">
+            <div class="gallery-overlay">
+              <h4>Dance Battle</h4>
+              <p>Epic dance performances</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="cultural">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop" alt="Music Concert">
+            <div class="gallery-overlay">
+              <h4>Music Concert</h4>
+              <p>Live musical performances</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="cultural">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="Drama Competition">
+            <div class="gallery-overlay">
+              <h4>Drama Competition</h4>
+              <p>Theatrical excellence</p>
+            </div>
+          </div>
+
+          <!-- Competitions -->
+          <div class="gallery-item" data-category="competitions">
+            <img src="https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop" alt="Quiz Competition">
+            <div class="gallery-overlay">
+              <h4>Quiz Mania</h4>
+              <p>Testing knowledge and wit</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="competitions">
+            <img src="https://images.unsplash.com/photo-1559223607-a43c990c692c?w=400&h=300&fit=crop" alt="Debate Competition">
+            <div class="gallery-overlay">
+              <h4>Debate Competition</h4>
+              <p>Intellectual discussions</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="competitions">
+            <img src="https://images.unsplash.com/photo-1606591447999-d6b06e7a4749?w=400&h=300&fit=crop" alt="Photography Contest">
+            <div class="gallery-overlay">
+              <h4>Photography Contest</h4>
+              <p>Capturing perfect moments</p>
+            </div>
+          </div>
+
+          <!-- More general photos -->
+          <div class="gallery-item" data-category="technical">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="Tech Setup">
+            <div class="gallery-overlay">
+              <h4>Event Setup</h4>
+              <p>Behind the scenes preparation</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="cultural">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=300&fit=crop" alt="Stage Performance">
+            <div class="gallery-overlay">
+              <h4>Main Stage</h4>
+              <p>Cultural performances venue</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="competitions">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop" alt="Awards Ceremony">
+            <div class="gallery-overlay">
+              <h4>Awards Ceremony</h4>
+              <p>Celebrating winners</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-stats">
+          <div class="stat-card">
+            <h3>500+</h3>
+            <p>Photos Captured</p>
+          </div>
+          <div class="stat-card">
+            <h3>15+</h3>
+            <p>Events Documented</p>
+          </div>
+          <div class="stat-card">
+            <h3>1000+</h3>
+            <p>Happy Moments</p>
+          </div>
+        </div>
+
+        <div class="photo-submission">
+          <h3>📤 Submit Your Photos</h3>
+          <p>Have great photos from the fest? Share them with us!</p>
+          <a href="contact.html" class="submit-btn">Submit Photos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 College Fest. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function showGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const tabs = document.querySelectorAll('.tab-btn');
+      
+      // Remove active class from all tabs
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      // Add active class to clicked tab
+      event.target.classList.add('active');
+      
+      // Show/hide gallery items
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Add click effect to gallery items
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 150);
+      });
+    });
+  </script>
+</body>
+</html>
