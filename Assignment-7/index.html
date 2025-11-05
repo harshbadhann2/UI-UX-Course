@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>📝 To-Do List</h1>
+
+        <div class="stats">
+            <span>Total: <strong id="total-tasks">0</strong></span>
+            <span>Completed: <strong id="completed-tasks">0</strong></span>
+        </div>
+
+        <form id="task-form">
+            <input type="text" id="task-title" placeholder="Enter task title" required>
+            <textarea id="task-description" placeholder="Task description (optional)"></textarea>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <div id="task-list">
+            <p class="empty-msg">No tasks yet. Add one above!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
