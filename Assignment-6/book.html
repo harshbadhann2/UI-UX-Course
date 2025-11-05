@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Trip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="nav">
+        <ul id="nav-bar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="book.html">Book</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>📅 Book Your Dream Trip</h1>
+            <p>Fill out the form below and we'll calculate your trip cost instantly. Use promo codes for special discounts!</p>
+            
+            <div class="booking-layout">
+                <form id="booking-form" onsubmit="return false;">
+                    <div class="form-section">
+                        <h3>👤 Personal Information</h3>
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                    </div>
+
+                    <div class="form-section">
+                        <h3>✈️ Trip Details</h3>
+                        <label for="package">Select Destination *</label>
+                        <select id="package" name="package" required>
+                            <option value="" disabled selected>--- Choose Your Destination ---</option>
+                        </select>
+
+                        <label for="start-date">Start Date *</label>
+                        <input type="date" id="start-date" name="start-date" required>
+
+                        <label for="end-date">End Date *</label>
+                        <input type="date" id="end-date" name="end-date" required>
+
+                        <label for="guests">Number of Guests *</label>
+                        <input type="number" id="guests" name="guests" min="1" max="10" value="1" required>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>💳 Promo & Requests</h3>
+                        <label for="promo-code">Promo Code (Optional)</label>
+                        <input type="text" id="promo-code" name="promo-code" placeholder="e.g., EARLYBIRD, SUMMER25">
+                        <small>Available codes: EARLYBIRD (10% off), SUMMER25 (5% off)</small>
+
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" name="requests" rows="4" placeholder="Any dietary requirements, accessibility needs, or special requests..."></textarea>
+                    </div>
+
+                    <div class="price-estimator">
+                        <h3>💰 Price Estimate</h3>
+                        <p id="estimated-price">Fill the form to see your trip cost.</p>
+                    </div>
+
+                    <button type="submit" id="submit-btn" disabled>🎫 Confirm Booking</button>
+                </form>
+
+                <div class="booking-info">
+                    <div class="info-box">
+                        <h3>📋 Booking Information</h3>
+                        <ul>
+                            <li>✅ Instant booking confirmation</li>
+                            <li>✅ Flexible payment options</li>
+                            <li>✅ Free cancellation up to 7 days</li>
+                            <li>✅ 24/7 customer support</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>🎁 Active Promotions</h3>
+                        <ul>
+                            <li><strong>EARLYBIRD:</strong> 10% off</li>
+                            <li><strong>SUMMER25:</strong> 5% off</li>
+                            <li><strong>GROUP10:</strong> Book 5+ guests</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Wanderlust Travels. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
